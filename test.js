@@ -1,17 +1,10 @@
-try {
-
-	var blah = require('dfgdfh');
-} catch(err) {
-	require('sys').puts(JSON.stringify(err))
-	throw err;
-}
-
-var syncr = require('syncserver'),
-	gs = require('gs');
+var syncr = require('socketsyncr'),
+	gs = require('gs'),
+	sys = require('sys');
 	
 
 // Create SyncServer (with Node JS HTTP Server and SocketIO server)
-syncServer = syncr.SyncServer();
+syncServer = new syncr.SyncServer();
 syncServer.listen(8030);
 
 
@@ -20,10 +13,10 @@ sock = syncServer.socketServer;
 
 
 
-var world = gs.World(0,'My World');
+var world = new gs.World(0,'My World');
 
-critter1 = gs.Critter('critter 1');
-critter2 = gs.Critter('foo critter');
+critter1 = new gs.Critter('critter 1');
+critter2 = new gs.Critter('foo critter');
 
 world.add_critter(0,4,critter1);
 world.add_critter(2,5,critter2);
