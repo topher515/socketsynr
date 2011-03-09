@@ -2,14 +2,17 @@
 <head>
 	
 	<script src="/node.client/yabble.js"></script>
-	<!-- script src="/socket.io/socket.io.js"></script -->
+	<script src="/socket.io/socket.io.js"></script>
 	<script src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
 	
 	
 	<!-- Uses require -->
 	<script>
-		require.setModuleRoot('http://localhost:8030/node.client/')
-		require.run('./socketsyncr/client')
+		var HOST = 'localhost'
+		var PORT = 8030
+	
+		require.setModuleRoot('http://' + HOST + ':' + PORT + '/node.client/')
+		require.run('./gs/client')
 		
 		//require = function() {}
 	</script>

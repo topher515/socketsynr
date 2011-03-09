@@ -23,6 +23,7 @@ world.add_critter(2,5,critter2);
 
 syncServer.register(critter1);
 syncServer.register(critter2);
+syncServer.register(world);
 
 /*world.on('critter_set',function(x,y,critter) {
 	socket.clients.send(JSON.stringify({
